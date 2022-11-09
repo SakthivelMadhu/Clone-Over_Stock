@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         #head1{
+            height:40px;
+            margin-top: 10px; 
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;         
+        }
+        #head1Img{           
+            border-radius: 50%;
+            padding-left: 20px;
+        }
+        #head1 > p{
+            margin-bottom: 20px;
+        }
+        /* search section */
+        #head2 {
+            height:auto;
+            border: 0px solid red;
+            
+        }
+        #head2 > div{
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+            grid-template-rows: auto;
+            gap:20px;
+            padding: 10px;
+            height: auto;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+           
+        }
+        #head2-input{
+            width:800px;
+            font-size: large;
+        }
+        /* category section */
+        #head3{
+            display: flex;
+            justify-content: space-between;
+            height: 40px;
+            padding: 20px;
+            padding-top: 30px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            border: 1px solid white;
+        }
+        #head4{
+            width: 50%;
+            margin: auto;
+            display: flex;           
+        }
+        #head > div{
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        }
+        
+
+    </style>
+</head>
+<body>
+     <!-- country section -->
+    <div id="head1">
+        <p>Ships to:<img id="head1Img" src="https://ak1.ostkcdn.com/img/mxc/intFlag_IN.gif" alt=""></p>
+    </div>
+    <!-- search section -->
+    <div id="head2"></div>
+    <!-- category section -->
+    <div id="head3"></div>
+    <!-- login page section -->
+    <div id="head4">
+        <div id="head4part1"></div>
+        <div id="head4part2"></div>
+    </div>
+</body>
+</html>
+<script>
+    let bag = [];
+
+    // head2 -> seacrh section 
+    let loginpage = JSON.parse(localStorage.getItem("loginbutton")) || [];
+    let cartpage = JSON.parse(localStorage.getItem("cartbutton")) || [];  
+    document.querySelector("#head2").innerHTML = "";
+    let head2div = document.createElement("div");
+    let logo = document.createElement("img");
+    logo.setAttribute("src", "https://cdn-icons-png.flaticon.com/128/8388/8388858.png");
+    let name = document.createElement("h1");
+    name.innerText = "Sadi";
+    let input = document.createElement("input");
+    input.placeholder = "Search... everything you find ships free";
+    input.type = Text;
+    input.id = "head2-input";
+    let submit = document.createElement("button");
+    submit.backgroundcolour= "red";   
+    submit.innerText = "submit";
+    submit.type = "submit";
+    let login = document.createElement("button");
+    login.innerText = "Account";
+    login.addEventListener("click" , function(){
+        loginpage.push(login);
+        localStorage.setItem("loginbutton" , json.stringify(loginpage));
+    });
+    let cart = document.createElement("button");
+    cart.innerText = "Cart";
+    cart.addEventListener("click" , function(){
+        cartpage.push(cart);
+        localStorage.setItem("cartbutton" , json.stringify(cartpage));
+    });
+    head2div.append(logo,name,input,submit,login,cart)
+    document.querySelector("#head2").append(head2div);
+
+
+
+    // head3 -> category page section 
+    let salesDeals =JSON.parse(localStorage.getItem("SalesandDealsbutton")) || [];
+    let furnitures =JSON.parse(localStorage.getItem("furniturebutton")) || [];   
+    document.querySelector("#head3").innerHTML = ""; 
+    let furniture = document.createElement("button");
+    furniture.innerText = "Furniture";
+    furniture.addEventListener("click" , function(){
+        furnitures.push(saleDeal);
+        localStorage.setItem("furniturebutton" , JSON.stringify(furniture))
+    });
+    let rugs = document.createElement("button");
+    rugs.innerText = "Rugs";
+    let decor = document.createElement("button");
+    decor.innerText = "Decor";
+    let bedding = document.createElement("button");
+    bedding.innerText = "Bedding";
+    let homeImprovement = document.createElement("button");
+    homeImprovement.innerText = "Home Improvement";
+    let kitchen = document.createElement("button");
+    kitchen.innerText = "Kitchen";
+    let outdoor = document.createElement("button");
+    outdoor.innerText = "Outdoor";
+    let ligthing = document.createElement("button");
+    ligthing.innerText = "Lighting";
+    let kidsbaby = document.createElement("button");
+    kidsbaby.innerText = "Kids & Baby";
+    let more = document.createElement("button");
+    more.innerText = "More";
+    let ideas = document.createElement("button");
+    ideas.innerText = "Ideas";
+    let saleDeal = document.createElement("button");
+    saleDeal.innerText = "Sales & Deals";
+    saleDeal.addEventListener("click" , function(){
+        salesDeals.push(saleDeal);
+        localStorage.setItem("SalesandDealsbutton" , JSON.stringify(salesDeals))
+    });
+    document.querySelector("#head3").append(furniture,rugs,decor,bedding,homeImprovement,kitchen,outdoor,ligthing,kidsbaby,more,ideas,saleDeal);
+    
+    // login page left side section 
+    let acc = [];
+    document.querySelector("#head4part1").innerHTML = "";
+    let accname = document.createElement("h1");
+    accname.innerText = "Create Account";
+    let emails = document.createElement("h3");
+    emails.innerText = "Email Address";
+    let emailInput = document.createElement("input");
+    emailInput.type = "email";
+    emailInput.placeholder = "Enter Email Address";
+    let password = document.createElement("h3");
+    password.innerText = "Password";
+    let passwordInput = document.createElement("input");
+    passwordInput.type = Text;
+    passwordInput.placeholder = "Enter Password Address";
+    let confirmpassword = document.createElement("h3");
+    confirmpassword.innerText = "Confirm Password";
+    let confirmpasswordInput = document.createElement("input");
+    confirmpasswordInput.type = Text;
+    confirmpasswordInput.placeholder = "Enter Password Address";
+    let button = document.createElement("button");
+    button.innerText = "Create Account";
+    button.backgroundcolour="blue";
+    button.color = "white";
+    button.addEventListener("click" , function(){
+        acc.push(button);
+    });
+    let button2 = document.createElement("button");
+    button2.innerText = "Continue As Guest";
+    document.querySelector("#head4part1").append(accname,emails,emailInput,password,passwordInput,confirmpassword,confirmpasswordInput,button,button2);
+
+    // login page right part section
+    let loginacc = [];
+    document.querySelector("#head4part2").innerHTML = "";
+    let loginname = document.createElement("h1");
+    loginname.innerText = "Sign In";
+    let emailid = document.createElement("h3");
+    emailid.innerText = "Email Address*";
+    let emailInputid = document.createElement("input");
+    emailInputid.type = "email";
+    emailInputid.placeholder = "Enter Email Address";
+    let passwordid = document.createElement("h3");
+    passwordid.innerText = "Password";
+    let passwordInputid = document.createElement("input");
+    passwordInputid.type = Text;
+    passwordInputid.placeholder = "Enter Password Address";
+    let buttonid = document.createElement("button");
+    buttonid.innerText = "Sign In";
+    buttonid.backgroundcolour="green";
+    buttonid.
+    buttonid.color = "white";
+    buttonid.addEventListener("click" , function(){
+        loginacc.push(button);
+    });
+    let forgot = document.createElement("h3");
+    forgot.innerText = "Forgot Your Password";
+    forgot.type =submit;
+    forgot.backgroundcolour = "lightred";
+    document.querySelector("#head4part2").append(loginname,emailid,emailInputid,passwordid,passwordInputid,buttonid,forgot);
+</script>
