@@ -1,0 +1,312 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+#head{
+    min-height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;           
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 0% 2%;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+#nav-search{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;         
+    font-size: 30px;
+}
+#nav-search h1{
+    padding-right: 20px;
+    cursor: pointer;
+}
+#nav-search img{
+    width: 150px;
+    border-radius: 30%;
+}
+
+#nav-input{
+    width:700px;
+    font-size: 20px;
+}
+#nav-input-submit{
+    padding-left: 10px;
+    font-size: 20px;
+}
+#nav-links{
+    flex: 1;
+    text-align: right;
+}
+#nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+#nav-links ul li a{   
+    text-decoration: none;
+    font-size: 30px;
+}
+
+#nav-links ul li::after{
+    content: '';
+    width:0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+#nav-links ul li:hover::after{
+    width: 100%;
+}
+
+#nav1-links{
+    flex: 1;
+    text-align: center;
+    
+}
+#nav1-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+    
+}
+#nav1-links ul li a{
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    
+}
+#nav1-links ul li::after{
+    content: '';
+    width:0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+#nav1-links ul li:hover::after{
+    width: 100%;
+}
+h1{
+    margin: auto;
+    text-align: center;
+}
+#head4{
+    cursor: pointer;
+    width:90%;
+    height:600px;
+    padding-top: 30px;
+    margin: auto;
+    background-image: url("https://ak1.ostkcdn.com/img/mxc/10312022_HOLIDAY2022_Kitchen_Hero_Desktop.jpg?imwidth=680");
+}
+ /* limited time deals section */
+#head5{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: auto;
+    gap: 20px;          
+    width:90%;
+    margin: auto;
+    height: auto;
+    padding-top: 30px;
+    
+}
+#head5 > div{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;   
+    background-color: bisque;    
+    height: auto;     
+    cursor: pointer;
+}
+#head5 > div >img{
+    width:100%;      
+}
+#head5 > div >h2{
+    text-align: center;          
+}
+#head6{
+    cursor: pointer;
+    width:90%;
+    height:600px;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-image: url("https://ak1.ostkcdn.com/img/mxc/10312022_HOLIDAY2022_Decor_Hero_Desktop.jpg?imwidth=680");
+}
+/* fresh finds in each category */
+#head7{
+    
+    margin:auto;
+    width:90%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+}
+#head7 > div >img{
+    cursor: pointer;
+    width:100%;
+}
+#head7 > div>h3{
+    text-align: center;
+}
+/* Seasonal Updates to Warm up Your Winter */
+#head8{
+    
+    margin:auto;
+    width:90%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+    
+}
+#head8 > div{
+    cursor: pointer;
+    text-align: left;
+    padding-left: 10px;
+    background-color: darkkhaki;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; 
+}
+#head8 > div >img{
+    width:100%;
+}
+#head9{
+    cursor: pointer;
+    width:90%;
+    height:600px;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-image: url("https://ak1.ostkcdn.com/img/mxc/11072022_Desktop_Furniture_AshleyFurniture.jpg?imwidth=680");
+}
+/* Overstock Featured Brands section */
+#head10{
+   
+    margin:auto;
+    width:90%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+    
+}
+#head10 > div{
+    cursor: pointer;
+    text-align: center;
+    background-color:cadetblue;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; 
+}
+#head10 > div >img{
+    width:100%;
+}
+#head11{
+    cursor: pointer;
+    width:90%;
+    height:600px;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-image: url("https://ak1.ostkcdn.com/img/mxc/11072022_Desktop_BeddingandBath_Revman.jpg?imwidth=680");
+}
+#head11 img{
+    width: 100%;
+}
+/* we got your style section */
+#head12{
+    margin:auto;
+    width:90%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+    
+}
+#head12 > div{
+    cursor: pointer;
+    text-align: left;
+    padding-left: 10px;
+    background-color:lightgrey;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; 
+}
+#head12 > div >img{
+    width:100%;
+}
+#head13{
+    margin: auto;
+    text-align: center;     
+}
+#head13-a{
+    color: blue;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid orange;
+    padding: 12px 34px;
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+#head13-a:hover{
+    border: 1px solid red;
+    background: red;
+    transition: 1s;
+}
+/* Trending search section */
+#head14{
+    margin:auto;
+    width:90%;           
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
+    gap: 20px;            
+}
+#head14 > div{
+    cursor: pointer;
+    text-align: center;
+    justify-items: center;
+    height: 50px;
+    font-size: x-large;
+    background-color:lightcyan;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; 
+}
+/* <!-- bottom section --> */
+#head15{
+    background-color: gray;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding-top: 30px;
+    width:100%;
+    margin: auto;
+    text-align: center;
+    
+}
+#head15 > div{
+    cursor: pointer;
+    justify-content: space-between; 
+              
+}
+#head15 > div >p{
+    padding-top:15px;
+}
