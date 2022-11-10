@@ -160,34 +160,6 @@ h1{
 
 
 
-
-
-
-
-#head4{
-    width:90%;
-    height:600px;
-    padding-top: 30px;
-    margin: auto;
-    background-image: url("https://ak1.ostkcdn.com/img/mxc/10312022_HOLIDAY2022_Kitchen_Hero_Desktop.jpg?imwidth=680");
-}
-#head p{
-    width:50%;
-    text-align: center;
-    margin: auto;
-}
-#heading {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: auto;
-    gap: 20px;
-    text-align: center;
-    margin: auto;
-    width:70%;
-}
-
-
-
 /* <!-- bottom section --> */
 #head15{
     background-color: gray;
