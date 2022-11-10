@@ -6,9 +6,6 @@
 #head{
     min-height: 100vh;
     width: 100%;
-    background-position: center;
-    background-size: cover;
-    position: relative;           
 }
 nav{
     display: flex;
@@ -26,9 +23,12 @@ nav{
 }
 #nav-search h1{
     padding-right: 20px;
+    cursor: pointer;
 }
 #nav-search img{
-    width: 150px;
+    padding-top: 5px;
+    width: 80px;
+    /* border-radius: 50%; */
 }
 
 #nav-input{
@@ -42,6 +42,7 @@ nav{
 #nav-links{
     flex: 1;
     text-align: right;
+    box-sizing: border-box;
 }
 #nav-links ul li{
     list-style: none;
@@ -52,6 +53,7 @@ nav{
 #nav-links ul li a{   
     text-decoration: none;
     font-size: 30px;
+    color:rgb(255, 47, 241)
 }
 
 #nav-links ul li::after{
@@ -66,19 +68,25 @@ nav{
 #nav-links ul li:hover::after{
     width: 100%;
 }
+
+#nav-links .fa{
+    margin-right: 5px;
+}
 #nav1-links{
     flex: 1;
-    text-align: center;
+    text-align: center;  
+    /* width:100%; */
+    
+    box-sizing: border-box;
 }
 #nav1-links ul li{
     list-style: none;
     display: inline-block;
     padding: 8px 12px;
     position: relative;
-    
 }
 #nav1-links ul li a{
-    color: black;
+    color: blue;
     text-decoration: none;
     font-size: 20px;
     
@@ -95,6 +103,60 @@ nav{
 #nav1-links ul li:hover::after{
     width: 100%;
 }
+
+/* drop down menu bars */
+.furniture-menu{
+    display: none;   
+}
+#nav1-links ul li:hover .furniture-menu{
+    display: block;
+    position: absolute;
+    background: white;
+    margin-top: 15px;
+    margin-left: -15px;
+}
+#nav1-links ul li:hover .furniture-menu ul{
+    display: block;
+    margin: 10px; 
+}
+#nav1-links ul li:hover .furniture-menu ul li{
+    width:300px; 
+    padding: 10px;
+    border-bottom: 1px double red;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+}
+#nav1-links ul li:hover .furniture-menu ul li:last-child{
+    border-bottom: none;  
+}
+#nav1-links ul li:hover .furniture-menu ul li::after{
+    background: none;
+}
+#nav1-links ul li:hover .furniture-menu ul li a:hover{
+    color: green;
+}
+.fa-angle-right{
+    float: right;
+}
+.furniture-menu-2{
+    display: none;
+}
+.hover-me:hover .furniture-menu-2{
+    position: absolute;
+    display: block;
+    margin-top: -40px;
+    margin-left: 320px;
+    background: white;
+}
+
+
+
+
+h1{
+    margin: auto;
+    text-align: center;
+}
 h1{
     text-align: left;   
 }
@@ -110,11 +172,14 @@ h1{
     gap: 20px;
     width:90%;
     margin: auto;
+    padding: 30px 0px;
 }
 #headings div{
     text-align: left;   
     margin: auto;
 }
+
+
 /* <!-- bottom section --> */
 #head15{
     background-color: gray;
@@ -127,8 +192,35 @@ h1{
     
 }
 #head15 > div{
-    justify-content: space-between;           
+    cursor: pointer;
+    justify-content: space-between; 
+              
 }
 #head15 > div >p{
     padding-top:15px;
 }
+
+
+
+
+
+/* .furniture-menu{
+    display: none;   
+}
+#nav1-links ul li:hover .furniture-menu div{
+    display: block;
+    position: absolute;
+    background: #777;
+}
+#nav1-links ul li:hover .furniture-menu div ul{
+    display: block;
+    margin: 10px; 
+}
+#nav1-links ul li:hover .furniture-menu div ul li{
+    width:1500px; 
+    padding: 10px;
+    border-bottom: 1px dotted white;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+} */
