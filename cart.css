@@ -1,0 +1,409 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+#head{
+    min-height: 100vh;
+    width: 100%;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 0% 2%;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+#nav-search{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;         
+    font-size: 20px;
+}
+#nav-search h1{
+    padding-right: 20px;
+    cursor: pointer;
+}
+#nav-search img{
+    padding-top: 5px;
+    width: 70px;
+    /* border-radius: 50%; */
+}
+
+#nav-input{
+    width:800px;
+    font-size: 15px;
+}
+#nav-input-submit{
+    padding-left: 10px;
+    font-size: 15px;
+}
+#nav-links{
+    flex: 1;
+    text-align: right;
+    box-sizing: border-box;
+}
+#nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+#nav-links ul li a{   
+    text-decoration: none;
+    font-size: 15px;
+    color:rgb(255, 47, 241)
+}
+
+#nav-links ul li::after{
+    content: '';
+    width:0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+#nav-links ul li:hover::after{
+    width:100%;
+}
+
+#nav-links .fa{
+    margin-right: 5px;
+}
+#nav1-links{
+    flex: 1;
+    width:100%;
+    text-align: center;  
+    box-sizing: border-box;
+}
+#nav1-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+#nav1-links ul li a{
+    color: blue;
+    text-decoration: none;
+    font-size: 15px;
+    
+}
+#nav1-links ul li::after{
+    content: '';
+    width:0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+#nav1-links ul li:hover::after{
+    width: 100%;
+}
+
+body{
+    background-color: azure;
+}
+/* drop down menu bars */
+.furniture-menu{
+    display: none;   
+}
+#nav1-links ul li:hover .furniture-menu{
+    display: block;
+    position: absolute;
+    background: white;
+    margin-top: 15px;
+    margin-left: -15px;
+}
+#nav1-links ul li:hover .furniture-menu ul{
+    display: block;
+    margin: 10px; 
+}
+#nav1-links ul li:hover .furniture-menu ul li{
+    width:300px; 
+    padding: 10px;
+    border-bottom: 1px double red;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+}
+#nav1-links ul li:hover .furniture-menu ul li:last-child{
+    border-bottom: none;  
+}
+#nav1-links ul li:hover .furniture-menu ul li::after{
+    background: none;
+}
+#nav1-links ul li:hover .furniture-menu ul li a:hover{
+    color: green;
+}
+.fa-angle-right{
+    float: right;
+}
+.furniture-menu-2{
+    display: none;
+}
+.hover-me:hover .furniture-menu-2{
+    position: absolute;
+    display: block;
+    margin-top: -40px;
+    margin-left: 320px;
+    background: white;
+}
+
+h1{
+    margin: auto;
+    text-align: center;
+    color: darkgoldenrod;
+}
+
+
+/* checkout button */
+#head13{
+    margin: auto;
+    text-align: right;
+    padding: 50px;     
+}
+#head13-a{
+    color: blue;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid orange;
+    padding: 12px 34px;
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+#head13-a:hover{
+    border: 1px solid red;
+    background: red;
+    transition: 1s;
+}
+
+
+
+
+
+
+
+
+
+/* Cart items details */
+
+.cart-page{
+    margin: 80px auto;
+}
+table{
+    width: 70%;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+.cart-info{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+th{
+    text-align: left;
+    padding: 5px;
+    color: white;
+    background: #f44336;
+    font-weight: normal;
+}
+
+td{
+    padding: 10px 5px;
+}
+td input {
+    width:40px;
+    height: 40px;
+    padding: 5px;
+}
+td a{
+    color: #f44336;
+    font-size: 12px;
+}
+
+td img{
+    width:80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.total-price{
+    display: flex;
+    justify-content: flex-end;
+
+}
+.total-price table{
+    border-top: 3px solid #ff523b;
+    width: 100%;
+    max-width: 350px;
+    
+}
+td:last-child{
+    text-align: right;
+}
+th:last-child{
+    text-align: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* <!-- bottom section --> */
+#head15{
+    background-color: gray;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding-top: 30px;
+    width:100%;
+    margin: auto;
+    text-align: center;
+    
+}
+#head15 > div{
+    cursor: pointer;
+    justify-content: space-between; 
+              
+}
+#head15 > div >p{
+    padding-top:15px;
+}
+
+
+#container{
+    width:70%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+    padding: 20px;
+}
+#container > div >img{
+    width:100%;
+    height: 35%;
+}
+#container > div {
+    text-align: center;
+    height: auto;
+    flex-wrap: wrap;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* 
+div {
+    display: flex;
+    justify-content: space-around;
+  }
+  form {
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 30%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 30px;
+  }
+  
+  
+  
+  label {
+    font-size: 20px;
+  }
+  
+  table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 60%;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  table td,
+  table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  table tr:nth-child(even) {
+    background-color: #8caacf;
+  }
+  
+  table tr:hover {
+    background-color: #ddd;
+  }
+  
+  table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #0468aa;
+    color: white;
+    text-align: center;
+  }
+  
+  /* * {
+    box-sizing: border-box;
+  } */
+  
+  /* input[type="text"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  input[type="submit"] {
+    background-color: #2b619e;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 20px;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #3973b6;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 50px;
+    text-transform: uppercase;
+    font-family: monospace;
+    color: #2b619e;
+    text-decoration: underline;
+  }  */
+  
+
+
+
+
+

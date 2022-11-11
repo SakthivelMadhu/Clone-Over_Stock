@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>sadi.com </title>
     <link rel="stylesheet" href="loginPage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,16 +16,17 @@
         <nav>
             <div id="nav-search">
                 <a href="home.html"><img src="myLogo.png"> </a>
-                <h1>Sadi</h1>
+                <h1><a href="home.html">SADI</a></h1>
                 <input id="nav-input" type="text" placeholder="Search... everything you find ships free">
                 <input id="nav-input-submit" type="submit">
             </div>
             <div id="nav-links">
                 <ul>
                     <li><a href="loginPage.html"><i class="fa fa-user"></i>Account</a></li>
-                    <li><a href="" ><i class="fa fa-heart"></i>Lists</a></li>
+                    <li><a href="favorite.html" ><i class="fa fa-heart"></i>Favorite</a></li>
                     <i class="fa fa-shopping-cart" ></i>
-                    <li><a href= "" ><i class="fa fa-shopping-cart" ></i>Cart</a></li>
+                    <li><a href= "cart.html" ><i class="fa fa-shopping-cart" ></i>Cart</a></li>
+                    <li><a href="paymentpage.html">Checkout</a></li>
                 </ul>
             </div>
         </nav> 
@@ -531,20 +532,20 @@
                 <img src="google-logo.png" alt="">
             </div>
             <form id="login" class="input-group">
-                <input type="text" placeholder="User Id" class="input-field" required>
-                <input type="text" placeholder="Enter Password" class="input-field" required>
+                <input type="text" id="user" placeholder="User Id" class="input-field" required>
+                <input type="text" id="pass" placeholder="Enter Password" class="input-field" required>
                 <input type="checkbox" class="check-box"><span>Remeber Password</span>
-                <button type="submit" class="submit-btn">Login</button>
+                <button type="submit" class="submit-btn"><a href="products.html">Login</a></button>
             </form>
             <form id="register" class="input-group">
-                <input type="text" placeholder="User Id" class="input-field" required>
-                <input type="email" placeholder="Email Id" class="input-field" required>
-                <input type="text" placeholder="Enter Password" class="input-field" required>
+                <input type="text" id="userid" placeholder="User Id" class="input-field" required>
+                <input type="email" id="email" placeholder="Email Id" class="input-field" required>
+                <input type="text" id="passw" placeholder="Enter Password" class="input-field" required>
                 <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span>
                 <button type="submit" class="submit-btn">Register</button>
             </form>
         </div>
-
+   
 
         <!-- bottom section -->
         <div id="head15">
@@ -586,17 +587,31 @@
     var x = document.getElementById("login");
     var y = document.getElementById("register");
     var z = document.getElementById("btn");
-    function register(){
+
+    document.querySelector("#login").addEventListener("submit" , myfun)
+    function myfun(event){
+        event.preventDefault();
+        let user = document.querySelector("#user").value;
+        let pass = document.querySelector("#pass").value;
+        let add = {
+            user,pass
+        };
+        display(add);
+    }
+
+    function register(event){
         x.style.left = "-400px";
         y.style.left = "50px";
         z.style.left = "110px";
+        
     }
-    function login(){
+    function login(event){
         x.style.left = "50px";
         y.style.left = "450px";
         z.style.left = "0px";
+        
     }
-
+    
 </script> -->
 
 

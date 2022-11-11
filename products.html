@@ -4,28 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>sadi.com </title>
     <link rel="stylesheet" href="products.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" >
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <body>
     <section id="head">
         <!-- search section -->
         <nav>
             <div id="nav-search">
                 <a href="home.html"><img src="myLogo.png"> </a>
-                <h1>Sadi</h1>
-                <input id="nav-input" type="text" placeholder="Search... everything you find ships free">
+                <h1><a href="home.html">SADI</a></h1>
+                <input id="nav-input" oninput="search()" type="text" placeholder="Search... everything you find ships free">
                 <input id="nav-input-submit" type="submit">
             </div>
             <div id="nav-links">
                 <ul>
                     <li><a href="loginPage.html"><i class="fa fa-user"></i>Account</a></li>
-                    <li><a href="" ><i class="fa fa-heart"></i>Lists</a></li>
+                    <li><a href="favorite.html" ><i class="fa fa-heart"></i>Favorite</a></li>
                     <!-- <i class="fa fa-shopping-cart" ></i> -->
-                    <li><a href= "" ><i class="fa fa-shopping-cart" ></i>Cart</a></li>
+                    <li><a href= "cart.html" ><i class="fa fa-shopping-cart" ></i>Cart</a></li>
+                    <li><a href="paymentpage.html">Checkout</a></li>
                 </ul>
             </div>
         </nav>
@@ -518,6 +520,48 @@
             </div>
         </nav>
 
+       <!-- <img id="ok" src="background-1.jpg" alt=""> -->
+
+        <!-- Filter categories by Product -->
+        <h1>Filter categories by Product</h1>
+         <div id="head16">
+            <select id="price" onChange="handleSort()">
+                <option>Price</option>
+                <option value="LTH">Low to High</option>
+                <option value="HTL">High to Low</option>
+            </select>
+            <select id="count" onChange="handleCount()">
+                <option>Count</option>
+                <option value="LTH">Below 300</option>
+                <option value="HTL">Above 300</option>
+            </select>
+            <select id="colour" onChange="handleColour()">
+                <option>Colour</option>
+                <option value="green">green</option>
+                <option value="blue">blue</option>
+                <option value="red">green</option>
+                <option value="other">blue</option>
+            </select>
+            <select id="cat" onChange="handleCat()">
+                <option>All</option>
+                <option value="men's clothing">Men's</option>
+                <option value="women's clothing">Women's</option>
+                <option value="jewelery">Jewelery</option>
+                <option value="electronics">Electronics</option>               
+            </select>
+            <select id="rating" onChange="handleRating()">
+                <option>Rating</option>
+                <option value="LTH"> Low</option>
+                <option value="HTL">High</option>
+            </select>
+         </div>
+
+
+        <!-- products section -->
+        <h1>Product Items</h1>
+        <div id="head17">          
+            <div id="container"></div>
+        </div>
 
 
         <!-- bottom section -->
@@ -556,3 +600,132 @@
     </section>
 </body>
 </html>
+
+<script>
+
+    let bag = [];
+    let cartItems = JSON.parse(localStorage.getItem("cartProducts")) || [];
+    let cartItems1 = JSON.parse(localStorage.getItem("cartfavorite")) || [];
+
+    let url = "https://fakestoreapi.com/products";
+    fetch(url).then((res)=> res.json())
+    .then((data) => {
+        bag = data;
+        console.log(data);
+        displayCard(data);
+    }).catch((err) => alert(err));
+
+
+    // console.log(bag);
+    function handleSort(){
+        let selected = document.querySelector("#price").value;
+        if(selected =="HTL"){
+            bag.sort((a,b) => b.price - a.price);
+        }else if(selected == "LTH"){
+            bag.sort((a,b) => a.price - b.price);
+        }
+        displayCard(bag);
+    }
+
+    function handleCount(){
+        let selected = document.querySelector("#count").value;
+        if(selected =="HTL"){
+            bag.sort((a,b) => b.rating.count - a.rating.count);           
+        }else if(selected =="LTH"){
+            bag.sort((a,b) => a.rating.count - b.rating.count);   
+        }
+        displayCard(bag);
+    }
+
+
+    function handleColour(){
+        let news = document.querySelector("#colour").value;
+        let newData = bag.filter((element) =>{
+            return element.colour==news;
+        });
+        // console.log(newData)
+        displayCard(newData); 
+    }
+    
+
+    function handleRating(){
+        let selected = document.querySelector("#rating").value;
+        if(selected =="HTL"){
+            bag.sort((a,b) => b.rating.rate - a.rating.rate);
+        }else if(selected == "LTH"){
+            bag.sort((a,b) => a.rating.rate - b.rating.rate);
+        }
+        displayCard(bag);
+    }
+
+
+    function handleCat(){
+        let news = document.querySelector("#cat").value;
+        let newData = bag.filter((element) =>{
+            return element.category==news;
+        });
+        // console.log(newData)
+        displayCard(newData); 
+    }
+
+
+
+    function search(){
+        let x = document.querySelector("input").value;
+        let newData = bag.filter((element) =>{
+            return element.title.toLowerCase().includes(x.toLowerCase());
+        });
+        displayCard(newData)
+    }
+
+    //display the data
+    function displayCard(data){
+        document.querySelector("#container").innerHTML = "";
+        data.forEach(element => {
+    
+        let div = document.createElement("div");
+
+        let image = document.createElement("img");
+        image.setAttribute("src",element.image);
+
+        let title = document.createElement("h4");
+        title.innerText = element.title;
+
+        let category = document.createElement("p")
+        category.innerText = "Category =>"+element.category;
+        
+        let price = document.createElement("p");
+        price.innerText = "Price =>"+element.price;
+
+        let rating = document.createElement("p");
+        rating.innerText = "Rating =>"+element.rating.rate;
+
+        let count = document.createElement("p");
+        count.innerText = "Count =>"+element.rating.count;
+
+        let desc = document.createElement("p")
+        desc.innerText = "Details =>"+element.description;
+
+        let btn = document.createElement("button");
+        btn.innerText = "Add to cart";
+        btn.id="hello"
+        btn.addEventListener("click",function(){
+            cartItems.push(element)
+            localStorage.setItem("cartProducts" , JSON.stringify(cartItems))
+        })
+
+        let btn1 = document.createElement("button");
+        btn1.innerText = "Add to Favorite";
+        btn1.id="hello"
+        btn1.addEventListener("click",function(){
+            cartItems1.push(element)
+            localStorage.setItem("cartfavorite" , JSON.stringify(cartItems1))
+        })        
+        
+        div.append(image,title,category,price,rating,count,desc,btn,btn1);
+
+        document.querySelector("#container").append(div);
+        });
+
+    }
+</script>
