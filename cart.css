@@ -178,12 +178,13 @@ h1{
     display: inline-block;
     text-decoration: none;
     border: 1px solid orange;
-    padding: 12px 34px;
-    font-size: 20px;
+    padding: 10px 34px;
+    font-size: 22px;
     background: transparent;
     position: relative;
     cursor: pointer;
-    text-align: right;
+    text-align: center;
+    align-items: center;
     
 }
 #head13-a:hover{
@@ -243,7 +244,24 @@ h1{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-
+#hello{
+    color: blue;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid orange;
+    padding: 12px 34px;
+    font-size: 15px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    margin: 10px;
+    text-align: center;
+}
+#hello:hover{
+    border: 1px solid red;
+    background: red;
+    transition: 1s;
+}
 
 
 

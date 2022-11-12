@@ -562,40 +562,53 @@
 </html>
 
 <script>
-    
+    let cartItems = JSON.parse(localStorage.getItem("cartProducts")) || [];
     let fav = JSON.parse(localStorage.getItem("cartfavorite"))
     displayTable(fav);
 
     function search(){
         let x = document.querySelector("input").value;
         let newData = fav.filter((element) =>{
-            return element.title.toLowerCase().includes(x.toLowerCase());
+            return element.category.toLowerCase().includes(x.toLowerCase());
         });
-        displayTable(newData)
+        displayCard(newData)
     }
 
     function displayTable(fav){
         document.querySelector("#container").innerHTML="";
         fav.forEach ((element) => {
             let div = document.createElement("div");
-            
-            let image = document.createElement("img");
-            image.setAttribute("src",element.image);
 
-            let title = document.createElement("h4");
+            let image = document.createElement("img");
+            image.setAttribute("src",element.images);
+
+            let title = document.createElement("h3");
             title.innerText = element.title;
 
-            let price = document.createElement("p");
+            let category = document.createElement("h2")
+            category.innerText = element.category.name;
+
+            let price = document.createElement("h4");
             price.innerText = "Price =>"+element.price;
 
-            let rating = document.createElement("p");
-            rating.innerText = "Rating =>"+element.rating.rate;
+            let desc = document.createElement("p")
+            desc.innerText =element.description;
 
-            div.append(image,title,price,rating);
+            let count = document.createElement("h5");
+            count.innerText = "Count :-"+element.category.id;
+
+            let btn = document.createElement("button");
+            btn.innerText = "Add to cart";
+            btn.id="hello"
+            btn.addEventListener("click",function(){
+                cartItems.push(element)
+                localStorage.setItem("cartProducts" , JSON.stringify(cartItems))
+            }) 
+
+            div.append(image,category,count,title,price,desc,btn);
 
             document.querySelector("#container").append(div);
-
-        })
+        });
     }
 
 

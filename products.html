@@ -526,14 +526,14 @@
         <h1>Filter categories by Product</h1>
          <div id="head16">
             <select id="price" onChange="handleSort()">
-                <option>Price</option>
+                <option >Price</option>
                 <option value="LTH">Low to High</option>
                 <option value="HTL">High to Low</option>
             </select>
             <select id="count" onChange="handleCount()">
                 <option>Count</option>
-                <option value="LTH">Below 300</option>
-                <option value="HTL">Above 300</option>
+                <option value="LTH">Low to High</option>
+                <option value="HTL">High to Low</option>
             </select>
             <select id="colour" onChange="handleColour()">
                 <option>Colour</option>
@@ -543,11 +543,12 @@
                 <option value="other">blue</option>
             </select>
             <select id="cat" onChange="handleCat()">
-                <option>All</option>
-                <option value="men's clothing">Men's</option>
-                <option value="women's clothing">Women's</option>
-                <option value="jewelery">Jewelery</option>
-                <option value="electronics">Electronics</option>               
+                <option>Category</option>
+                <option value="Clothes">Clothes</option>
+                <option value="Furniture">Furniture</option>
+                <option value="Shoes">Shoes</option>
+                <option value="Electronics">Electronics</option> 
+                <option value="Others">Others</option>              
             </select>
             <select id="rating" onChange="handleRating()">
                 <option>Rating</option>
@@ -607,13 +608,13 @@
     let cartItems = JSON.parse(localStorage.getItem("cartProducts")) || [];
     let cartItems1 = JSON.parse(localStorage.getItem("cartfavorite")) || [];
 
-    let url = "https://fakestoreapi.com/products";
+    let url = "https://api.escuelajs.co/api/v1/products";
     fetch(url).then((res)=> res.json())
     .then((data) => {
         bag = data;
         console.log(data);
         displayCard(data);
-    }).catch((err) => alert(err));
+    }).catch((err) => console.log(err));
 
 
     // console.log(bag);
@@ -630,41 +631,40 @@
     function handleCount(){
         let selected = document.querySelector("#count").value;
         if(selected =="HTL"){
-            bag.sort((a,b) => b.rating.count - a.rating.count);           
+            bag.sort((a,b) => b.category.id - a.category.id);           
         }else if(selected =="LTH"){
-            bag.sort((a,b) => a.rating.count - b.rating.count);   
+            bag.sort((a,b) => a.category.id - b.category.id);   
         }
         displayCard(bag);
     }
 
 
-    function handleColour(){
-        let news = document.querySelector("#colour").value;
-        let newData = bag.filter((element) =>{
-            return element.colour==news;
-        });
-        // console.log(newData)
-        displayCard(newData); 
-    }
+    // function handleColour(){
+    //     let news = document.querySelector("#colour").value;
+    //     let newData = bag.filter((element) =>{
+    //         return element.colour==news;
+    //     });
+    //     // console.log(newData)
+    //     displayCard(newData); 
+    // }
     
 
-    function handleRating(){
-        let selected = document.querySelector("#rating").value;
-        if(selected =="HTL"){
-            bag.sort((a,b) => b.rating.rate - a.rating.rate);
-        }else if(selected == "LTH"){
-            bag.sort((a,b) => a.rating.rate - b.rating.rate);
-        }
-        displayCard(bag);
-    }
+    // function handleRating(){
+    //     let selected = document.querySelector("#rating").value;
+    //     if(selected =="HTL"){
+    //         bag.sort((a,b) => b.rating.rate - a.rating.rate);
+    //     }else if(selected == "LTH"){
+    //         bag.sort((a,b) => a.rating.rate - b.rating.rate);
+    //     }
+    //     displayCard(bag);
+    // }
 
 
     function handleCat(){
         let news = document.querySelector("#cat").value;
         let newData = bag.filter((element) =>{
-            return element.category==news;
+            return element.category.name==news;
         });
-        // console.log(newData)
         displayCard(newData); 
     }
 
@@ -673,7 +673,7 @@
     function search(){
         let x = document.querySelector("input").value;
         let newData = bag.filter((element) =>{
-            return element.title.toLowerCase().includes(x.toLowerCase());
+            return element.category.name.toLowerCase().includes(x.toLowerCase());
         });
         displayCard(newData)
     }
@@ -686,25 +686,22 @@
         let div = document.createElement("div");
 
         let image = document.createElement("img");
-        image.setAttribute("src",element.image);
+        image.setAttribute("src",element.images);
 
-        let title = document.createElement("h4");
+        let title = document.createElement("h3");
         title.innerText = element.title;
 
-        let category = document.createElement("p")
-        category.innerText = "Category =>"+element.category;
+        let category = document.createElement("h2")
+        category.innerText = element.category.name;
         
-        let price = document.createElement("p");
+        let price = document.createElement("h4");
         price.innerText = "Price =>"+element.price;
 
-        let rating = document.createElement("p");
-        rating.innerText = "Rating =>"+element.rating.rate;
+        let desc = document.createElement("p")
+        desc.innerText = element.description;
 
-        let count = document.createElement("p");
-        count.innerText = "Count =>"+element.rating.count;
-
-        // let desc = document.createElement("p")
-        // desc.innerText = "Details =>"+element.description;
+        let count = document.createElement("h5");
+        count.innerText = "Count :-"+element.category.id;
 
         let btn = document.createElement("button");
         btn.innerText = "Add to cart";
@@ -722,7 +719,7 @@
             localStorage.setItem("cartfavorite" , JSON.stringify(cartItems1))
         })        
         
-        div.append(image,title,category,price,rating,count,btn,btn1);
+        div.append(image,category,count,title,price,desc,btn,btn1);
 
         document.querySelector("#container").append(div);
         });
