@@ -519,32 +519,14 @@
             </div>
         </nav>
 
-
+        <!-- Cart items details -->
         <div id="head13" >
-            <a href="paymentpage.html" id="head13-a">Checkout</a>
+            <div id="cart"> Your total is :- </div>
+            <a href="paymentpage.html" id="head13-a">Checkout</a>           
         </div>
 
-
-        <!-- Cart items details -->
         <div id="container"></div>
-        
-    <!-- <table>   
-        <thead>
-            <tr>
-              <th>Product</th>
-              <th>Quantity</th>
-              <th>Subtotal</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!- Append your output to tbody -->
-        <!-- </tbody>
-    </table>  -->
-
-
-
-
-
+   
         <!-- bottom section -->
         <div id="head15">
             <div>
@@ -581,59 +563,17 @@
     </section>
 </body>
 </html>
-<!-- 
 <script>
-    let cartItems = JSON.parse(localStorage.getItem("cartProducts"));
-    displayCard(cartItems);
+    let cart = JSON.parse(localStorage.getItem("cartProducts"))
+    displayTable(cart);
 
-    let total = cartItems.reduce((acc,element) => acc + element.price , 0);
-    console.log(total);
-    document.querySelector("h2").innerText = "Total Price:"+total;
-
-    function displayCard(data){
-        document.querySelector("#container").innerHTML = "";
-        data.forEach(element => {
-    
-        let div = document.createElement("div");
-
-        let image = document.createElement("img");
-        image.setAttribute("src",element.image);
-
-        let title = document.createElement("h4");
-        title.innerText = element.title;
-
-        let category = document.createElement("p")
-        category.innerText = "Category =>"+element.category;
+    let total = cart.reduce((acc,element) => acc + element.price , 0);
         
-        let price = document.createElement("p");
-        price.innerText = "Price =>"+element.price;
+    document.querySelector("#cart").innerText = "Total Price:"+total;
 
-        let rating = document.createElement("p");
-        rating.innerText = "Rating =>"+element.rating.rate;
-
-        let count = document.createElement("p");
-        count.innerText = "Count =>"+element.rating.count;
-
-        let desc = document.createElement("p")
-        desc.innerText = "Details =>"+element.description;
-
-    
-        div.append(image,title,category,price,rating,count,desc);
-
-        document.querySelector("#container").append(div);
-        });
-
-    }
-</script> -->
-
-<script>
-
-let cart = JSON.parse(localStorage.getItem("cartProducts"))
-displayTable(cart);
-
-function displayTable(cart) {
-    document.querySelector("tbody").innerHTML="";
-        fav.forEach ((element) => {
+    function displayTable(cart) {
+        document.querySelector("#container").innerHTML="";
+        cart.forEach ((element) => {
             let div = document.createElement("div");
             
             let image = document.createElement("img");
@@ -647,81 +587,8 @@ function displayTable(cart) {
 
             div.append(image,title,price);
 
-            document.querySelector("tbody").append(div);
+            document.querySelector("#container").append(div);
 
-        });
-       
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// <div class="small-container cart-page">
-//     <table>
-//         <tr>
-//             <th>Product</th>
-//             <th>Quantity</th>
-//             <th>Subtotal</th>
-//         </tr>
-//         <tr>
-//             <td>
-//                 <div class="cart-info">
-//                     <img src="google-logo.png" alt="">
-//                     <div>
-//                         <p>Printed Tshirt</p>
-//                         <small>Price:$50.00</small>
-//                         <br>
-//                         <a href="">Remove</a>
-//                     </div>
-
-
-//                 </div>
-
-
-
-//             </td>
-//             <td><input type="number" value="1"></td>
-//             <td>$50.00</td>
-//         </tr>
-//     </table>
-
-//     <div class="total-price">
-//         <table>
-//             <tr>
-//                 <td>Subtotal</td>
-//                 <td>$200</td>
-//             </tr>
-//             <tr>
-//                 <td>Tax</td>
-//                 <td>$20</td>
-//             </tr>
-//             <tr>
-//                 <td>Total</td>
-//                 <td>$220</td>
-//             </tr>
-//         </table>
-//     </div>
-
-
-//         </div>
-
-
-
-
-
-
-
-
+        });      
+    }
 </script>

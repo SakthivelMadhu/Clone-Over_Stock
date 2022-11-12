@@ -703,8 +703,8 @@
         let count = document.createElement("p");
         count.innerText = "Count =>"+element.rating.count;
 
-        let desc = document.createElement("p")
-        desc.innerText = "Details =>"+element.description;
+        // let desc = document.createElement("p")
+        // desc.innerText = "Details =>"+element.description;
 
         let btn = document.createElement("button");
         btn.innerText = "Add to cart";
@@ -722,7 +722,7 @@
             localStorage.setItem("cartfavorite" , JSON.stringify(cartItems1))
         })        
         
-        div.append(image,title,category,price,rating,count,desc,btn,btn1);
+        div.append(image,title,category,price,rating,count,btn,btn1);
 
         document.querySelector("#container").append(div);
         });
