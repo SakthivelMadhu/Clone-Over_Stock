@@ -57,7 +57,7 @@ body{
 }
 #nav-links ul li a{   
     text-decoration: none;
-    font-size: 15px;
+    font-size: 14px;
     color:rgb(255, 47, 241)
 }
 
@@ -142,6 +142,7 @@ body{
 }
 .fa-angle-right{
     float: right;
+    width: 1px;
 }
 .furniture-menu-2{
     display: none;
@@ -158,6 +159,7 @@ h1{
     margin: auto;
     text-align: center;
     color: darkgoldenrod;
+   
 }
 
 
