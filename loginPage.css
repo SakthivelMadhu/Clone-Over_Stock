@@ -167,7 +167,7 @@ h1{
     height: 480px;
     position: relative;
     margin: 6% auto;
-    background: white;
+    background: azure;
     padding: 5px;
     overflow: hidden;
     
@@ -237,6 +237,7 @@ h1{
     outline: none;
     border-radius: 30px;
 }
+
 .check-box{
     margin: 30px 10px 30px 0px;
 }

@@ -155,11 +155,16 @@ nav{
 }
 
 h1{
+    
     margin: auto;
     text-align: center;
     color: darkgoldenrod;
 }
-
+#yes{
+    padding-top: 50px;
+    font-size: 30px;
+    text-align: left;
+}
 
 
 

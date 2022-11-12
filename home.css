@@ -218,6 +218,7 @@ body{
     grid-template-columns: repeat(6,1fr);
     grid-template-rows: auto;
     gap: 20px;
+    background-color: azure;
 }
 #head7 > div >img{
     cursor: pointer;
