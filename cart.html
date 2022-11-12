@@ -521,7 +521,7 @@
 
         <!-- Cart items details -->
         <div id="head13" >
-            <div id="cart"> Your total is :- </div>
+            <div id="cart"> </div>
             <a href="paymentpage.html" id="head13-a">Checkout</a>           
         </div>
 
@@ -564,28 +564,50 @@
 </body>
 </html>
 <script>
+    let cartItems1 = JSON.parse(localStorage.getItem("cartfavorite")) || [];
     let cart = JSON.parse(localStorage.getItem("cartProducts"))
     displayTable(cart);
 
-    let total = cart.reduce((acc,element) => acc + element.price , 0);
-        
-    document.querySelector("#cart").innerText = "Total Price:"+total;
+    let total = cart.reduce((acc,element) => acc + element.price , 0);     
+    document.querySelector("#cart").innerText = "Your Total Price is :-  "+total;
+
+    function search(){
+        let x = document.querySelector("input").value;
+        let newData = cart.filter((element) =>{
+            return element.category.name.toLowerCase().includes(x.toLowerCase());
+        });
+        displayCard(newData)
+    }
 
     function displayTable(cart) {
         document.querySelector("#container").innerHTML="";
         cart.forEach ((element) => {
             let div = document.createElement("div");
-            
-            let image = document.createElement("img");
-            image.setAttribute("src",element.image);
 
-            let title = document.createElement("h4");
+            let image = document.createElement("img");
+            image.setAttribute("src",element.images);
+
+            let title = document.createElement("h3");
             title.innerText = element.title;
 
-            let price = document.createElement("p");
+            let category = document.createElement("h2")
+            category.innerText = element.category.name;
+            
+            let price = document.createElement("h4");
             price.innerText = "Price =>"+element.price;
 
-            div.append(image,title,price);
+            let count = document.createElement("h5");
+            count.innerText = "Count :-"+element.category.id;
+
+            let btn1 = document.createElement("button");
+            btn1.innerText = "Add to Favorite";
+            btn1.id="hello"
+            btn1.addEventListener("click",function(){
+                cartItems1.push(element)
+                localStorage.setItem("cartfavorite" , JSON.stringify(cartItems1))
+            })
+
+            div.append(image,category,count,title,price,btn1);
 
             document.querySelector("#container").append(div);
 

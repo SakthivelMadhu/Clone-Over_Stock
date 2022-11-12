@@ -30,8 +30,8 @@ nav{
     cursor: pointer;
 }
 #nav-search img{
-    padding-top: 5px;
-    width: 70px;
+    padding-top: 1px;
+    width: 50px;
     /* border-radius: 50%; */
 }
 
