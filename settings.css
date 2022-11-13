@@ -2,9 +2,10 @@
     padding: 0;
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    
 }
-
+body{
+    background-color: azure;
+}
 #head{
     min-height: 100vh;
     width: 100%;
@@ -30,7 +31,7 @@ nav{
 }
 #nav-search img{
     padding-top: 5px;
-    width: 50px;
+    width: 70px;
     /* border-radius: 50%; */
 }
 
@@ -106,9 +107,6 @@ nav{
     width: 100%;
 }
 
-body{
-    background-color: azure;
-}
 /* drop down menu bars */
 .furniture-menu{
     display: none;   
@@ -164,42 +162,110 @@ h1{
 }
 
 
-/* checkout button */
-#head13{
-    margin: auto;
-    text-align: center;
-    padding: 50px;     
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-}
-#head13-a{
-    color: blue;
-    display: inline-block;
-    text-decoration: none;
-    border: 1px solid orange;
-    padding: 10px 34px;
-    font-size: 22px;
-    background: transparent;
+
+.cont{
+    background: #fff;
+    width:540px;
+    height: 450px;
+    margin: 0 auto;
     position: relative;
-    cursor: pointer;
-    text-align: center;
-    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: 2px 5px 20px rgba(119, 119, 119,.5);
     
 }
-#head13-a:hover{
-    border: 1px solid red;
-    background: red;
-    transition: 1s;
+.leftbox{ 
+    float: left;
+    top: -5%;
+    left: 5%;
+    position: absolute;
+    width: 15%;
+    height: 110%;
+    background: #91e0b2;
+    box-shadow: 3px 3px 10px rgba(119, 119, 119,.5);
+    border: .1rem solid #fff;
+} 
+
+.leftbox nav a{
+    list-style: none;
+    padding: 35px;
+    color: white;
+    font-size: 1.1em;
+    display: block;
+    transition: all .3s ease-in-out;
 }
-#cart{
-    border:1px solid blue ;
-    padding: 20px 30px;
-    font-style: normal;
-    font-size: 20px;
-    width: 60%;
-    text-align: left;
+.leftbox nav a:hover{
+    color: #10ac84;
+    cursor: pointer;
+    transform: scale(1.2);
 }
+.leftbox nav a:first-child{
+    margin-top: 7px;
+}
+.leftbox nav a.active{
+    color: #10ac84;
+}
+.rightbox{
+    width:60%;
+    margin-left: 27%;
+    padding-top: 5px;
+}
+.tabshow{
+    transition: all .5s ease-in;
+    width: 80%;
+}
+.rightbox h1{
+    font-family: "Montserrat",sans-serif;
+    color: #7ed386;
+    font-size: 1.2rem;
+    margin-top: 60px;
+    margin-bottom: 35px;
+}
+.rightbox h2{
+    color: #777;
+    font-family: "Roboto" ,sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-left: 2px;
+    margin-top: 10px;
+}
+.input,.rightbox p{
+    border: 0;
+    border-bottom: 1px solid #3fb6a8;
+    width:80%;
+    font-family: "Montserrat",sans-serif;
+    font-size: .7em;
+    padding: 7px 0;
+    color: #070707;
+    outline: none;
+}
+span{
+    font-size: .7em;
+    color: #777;
+}
+.btn{
+    font-family: "Roboto" ,sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    border: 0;
+    color: #fff;
+    background: #7ed386;
+    padding: 7px 15px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    margin-top: 15px;
+}
+.tabshow{
+    display: none;
+}
+
+
+
+
+
+
+
 
 
 /* <!-- bottom section --> */
@@ -216,54 +282,8 @@ h1{
 #head15 > div{
     cursor: pointer;
     justify-content: space-between; 
-              
+            
 }
 #head15 > div >p{
     padding-top:15px;
 }
-
-
-#container{
-    width:70%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: auto;
-    gap: 20px;
-    padding: 20px;
-}
-#container > div >img{
-    width:100%;
-    height: 35%;
-}
-#container > div {
-    text-align: center; 
-    flex-wrap: wrap;
-    padding: 20px;
-    height: 300px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-#hello{
-    color: blue;
-    display: inline-block;
-    text-decoration: none;
-    border: 1px solid orange;
-    padding: 12px 34px;
-    font-size: 15px;
-    background: transparent;
-    position: relative;
-    cursor: pointer;
-    margin: 10px;
-    text-align: center;
-}
-#hello:hover{
-    border: 1px solid red;
-    background: red;
-    transition: 1s;
-}
-
-
-
-
-

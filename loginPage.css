@@ -30,14 +30,14 @@ nav{
 }
 #nav-search img{
     padding-top: 5px;
-    width: 70px;
+    width: 50px;
     /* border-radius: 50%; */
 }
 body{
     background-color: azure;
 }
 #nav-input{
-    width:750px;
+    width:700px;
     font-size: 15px;
 }
 #nav-input-submit{
