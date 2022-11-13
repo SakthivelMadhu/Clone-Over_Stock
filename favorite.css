@@ -32,12 +32,12 @@ nav{
 }
 #nav-search img{
     padding-top: 5px;
-    width: 70px;
+    width: 50px;
     /* border-radius: 50%; */
 }
 
 #nav-input{
-    width:800px;
+    width:700px;
     font-size: 15px;
 }
 #nav-input-submit{

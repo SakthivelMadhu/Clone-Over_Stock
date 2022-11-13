@@ -1,16 +1,18 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sadi.com </title>
-    <link rel="stylesheet" href="loginPage.css">
+    <link rel="stylesheet" href="settings.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    </style>
 <body>
     <section id="head">
         <!-- search section -->
@@ -25,13 +27,13 @@
                 <ul>
                     <li><a href="loginPage.html"><i class="fa fa-user"></i>Account</a></li>
                     <li><a href="favorite.html" ><i class="fa fa-heart"></i>Favorite</a></li>
-                    <li><a href= "cart.html" ><i class="fa fa-shopping-cart" ></i>Cart</a></li>
+                    <li><a href="cart.html" ><i class="fa fa-shopping-cart" ></i>Cart</a></li>
                     <li><a href="paymentpage.html"><i class="fa fa-credit-card" ></i>Checkout</a></li>
                     <li><a href="settings.html"><i class="fa fa-cog" ></i>Settings</a></li>
                 </ul>
             </div>
-        </nav> 
-         <!-- category section  -->
+        </nav>
+         <!-- category section -->
         <nav>
             <div id="nav1-links">
                 <ul>
@@ -519,34 +521,95 @@
                 </ul>
             </div>
         </nav>
-
-        <!-- login section -->
-        <div class="form-box">
-            <div class="button-box">
-                <div id="btn"></div>
-                <button type="button" class="toggle-btn" onclick="login()">Log In</button>
-                <button type="button" class="toggle-btn" onclick="register()">Register</button>
+        
+        <div class="cont">
+            <div class="leftbox">
+                <nav id="nav">
+                    <a onclick="tabs(0)" class="tab active">
+                        <i class="fa fa-user"></i>
+                    </a>
+                    <a onclick="tabs(1)" class="tab active">
+                        <i class="fa fa-credit-card"></i>
+                    </a>
+                    <a onclick="tabs(2)" class="tab active">
+                        <i class="fa fa-tv"></i>
+                    </a>
+                    <a onclick="tabs(3)" class="tab active">
+                        <i class="fa fa-tasks"></i>
+                    </a>
+                    <a onclick="tabs(4)" class="tab active">
+                        <i class="fa fa-cog"></i>
+                    </a>
+                </nav>
             </div>
-            <div class="social-icons">
-                <img src="facebook-logo.png" alt="">
-                <img src="email-logo.png" alt="">
-                <img src="google-logo.png" alt="">
+            <div class="rightbox">
+                <div class="profile tabshow">
+                    <h1>Personal Info</h1>
+                    <h2>Full Name</h2>
+                    <input type="text" class="input" value="Sakthivel Madhu">
+                    <h2>Birthday</h2>
+                    <input type="text" class="input" value="Feb 14,1998">
+                    <h2>Gender</h2>
+                    <input type="text" class="input" value="Male">
+                    <h2>Email</h2>
+                    <input type="email" class="input" value="example@gmail.com">
+                    <h2>Password</h2>
+                    <input type="password" class="input" value="YouKnow">
+                    <button class="btn">Update</button>
+                </div>
+                <div class="payment tabshow">
+                    <h1>Payment Info</h1>
+                    <h2>Payment Method</h2>
+                    <input type="text" class="input" value="VISA - 0123 **** **** 0987">
+                    <h2>Billing Address </h2>
+                    <input type="text" class="input" value="143 some place in earth">
+                    <h2>Zipcode</h2>
+                    <input type="text" class="input" value="123456">
+                    <h2>Billing Date</h2>
+                    <input type="text" class="input" value="Nov 12,2022">
+                    <h2>Redeem Card</h2>
+                    <input type="password" class="input" value="Enter gift code">
+                    <button class="btn">Update</button>
+                </div>
+                <div class="Subscription tabshow">
+                    <h1>Subscription Info</h1>
+                    <h2> Payment Date</h2>
+                    <p>May 12,2022</p>
+                    <h2>Plan</h2>
+                    <p>Limited plan</p>
+                    <h2>Monthly</h2>
+                    <p>$10.99</p>
+                    <h2>Email</h2>        
+                    <button class="btn">Update</button>
+                </div>
+                <div class="privacy tabshow">
+                    <h1>privacy Settings</h1>
+                    <h2> Manage Email Noti. </h2>
+                    <p></p>
+                    <h2>Manage Privacy settings</h2>
+                    <p></p>
+                    <h2>View terms of Use</h2>
+                    <p></p>
+                    <h2>Protect Account</h2>  
+                    <p></p>      
+                    <button class="btn">Update</button>
+                </div>
+                <div class="settings tabshow">
+                    <h1>Account Settings</h1>
+                    <h2> Sync Watchlist </h2>
+                    <p></p>
+                    <h2>Hold Subscription</h2>
+                    <p></p>
+                    <h2>Cancel Subscription</h2>
+                    <p></p>
+                    <h2>Your Device</h2>  
+                    <p></p>     
+                    <h2>Referrals</h2> 
+                    <p></p>
+                    <button class="btn">Update</button>
+                </div>
             </div>
-            <form id="login" class="input-group">
-                <input type="text" id="user" placeholder="User Id" class="input-field" required>
-                <input type="text" id="pass" placeholder="Enter Password" class="input-field" required>
-                <input type="checkbox" class="check-box"><span>Remeber Password</span>
-                <button type="submit"  class="submit-btn"><a href="products.html" onclick="click()">Login</a></button>
-            </form>
-            <form id="register" class="input-group">
-                <input type="text" id="userid" placeholder="User Id" class="input-field" required>
-                <input type="email" id="email" placeholder="Email Id" class="input-field" required>
-                <input type="text" id="passw" placeholder="Enter Password" class="input-field" required>
-                <input type="checkbox" class="check-box"><span>I agree to the terms & conditions</span>
-                <button type="submit" class="submit-btn">Register</button>
-            </form>
         </div>
-   
 
         <!-- bottom section -->
         <div id="head15">
@@ -581,41 +644,26 @@
                 <p>New Arrivals</p>
             </div>
         </div>
+
     </section>
 </body>
 </html>
 <script>
-    var x = document.getElementById("login");
-    var y = document.getElementById("register");
-    var z = document.getElementById("btn");
+    
 
-    document.querySelector("#login").addEventListener("submit" , myfun)
-    function myfun(event){
-        event.preventDefault();
-        let user = document.querySelector("#user").value;
-        let pass = document.querySelector("#pass").value;
-        let add = {
-            user,pass
-        };
-        display(add);
+    let tabbtn = document.querySelectorAll(".tab");
+    let tab = document.querySelectorAll(".tabshow");
+    function tabs(x){
+        tab.forEach( (element) => {
+            element.style.display = "none";
+        });
+        tab[x].style.display = "block";
     }
+    tab(0);
 
-    function register(event){
-        x.style.left = "-400px";
-        y.style.left = "50px";
-        z.style.left = "110px";
-        
-    }
-    function login(event){
-        x.style.left = "50px";
-        y.style.left = "450px";
-        z.style.left = "0px";
-        
-    }
-    function click(){
-        alert("Loged in Succesfully.")
-    }
-</script> -->
+    $(".tab").click(() => {
+        $(this).addClass("active").siblings().remove("acive");
+    })
 
 
 
@@ -623,47 +671,4 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
+</script>
