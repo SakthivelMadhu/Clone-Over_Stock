@@ -649,7 +649,6 @@
     //     displayCard(newData); 
     // }
     
-
     // function handleRating(){
     //     let selected = document.querySelector("#rating").value;
     //     if(selected =="HTL"){
@@ -660,7 +659,6 @@
     //     displayCard(bag);
     // }
 
-
     function handleCat(){
         let news = document.querySelector("#cat").value;
         let newData = bag.filter((element) =>{
@@ -668,8 +666,6 @@
         });
         displayCard(newData); 
     }
-
-
 
     function search(){
         let x = document.querySelector("input").value;
@@ -700,13 +696,14 @@
 
         let desc = document.createElement("p")
         desc.innerText = element.description;
+        // desc.innerText = element.subString(0,100+ "...")
 
         let count = document.createElement("h5");
         count.innerText = "Count :-"+element.category.id;
 
         let btn = document.createElement("button");
         btn.innerText = "Add to cart";
-        btn.id="hello"
+        btn.id="hello";
         btn.addEventListener("click",function(){
             cartItems.push(element)
             localStorage.setItem("cartProducts" , JSON.stringify(cartItems))
